@@ -1,10 +1,29 @@
-import React from "react";
+import React, { useRef, useState} from "react";
 import sending from "../images/sending.png";
 import email from "../images/email.png";
+import emailjs from '@emailjs/browser';
 
 function Contact() {
+
+  const form = useRef()
+  const [success, setSuccess] = useState(null)
+
+  const handleSubmit = (e) =>  {
+    e.preventDefault();
+
+    emailjs.sendForm('service_t5o6kh9', 'template_nkstt6i', form.current, '2oYmQj6xHDSIHT6ZY')
+      .then((result) => {
+          console.log(result.text);
+          setSuccess(true)
+      }, (error) => {
+          console.log(error.text);
+          setSuccess(false)
+      });
+
+  };
+
     return (
-        <section id="contact">
+        <section id="contact" data-aos="fade-up">
         <div className="page-title">
           <h2>
             <span>
@@ -20,7 +39,7 @@ function Contact() {
           </p>
         </div>
 
-        <div className="container">
+        <div className="container contact">
           <div className="row">
             <div className="col-lg-4 col-md-10 mx-auto ">
               <p className="section-description">
@@ -28,15 +47,13 @@ function Contact() {
                 they are! We can code while we listen to Music!.
               </p>
 
-              <form
+              <form ref={form} onSubmit={handleSubmit}
                 name="sentMessage"
-                action="https://formsubmit.co/nithish1204@gmail.com"
-                method="POST"
               >
                 <input
                   className="form-control form-labels"
                   placeholder="Name"
-                  id="n"
+                  id="name"
                   name="name"
                   required
                 />
@@ -67,6 +84,8 @@ function Contact() {
                   Send
                 </button>
               </form>
+              {success && 
+                "Your message has been set, i'll get back to you soon :)"}
             </div>
           </div>
         </div>

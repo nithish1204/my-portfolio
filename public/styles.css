@@ -5,6 +5,11 @@ body{
     font-family: 'Varela Round', sans-serif;
     color:#E1E8EB;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   h3{
     font-size: 2.5rem;
     margin: 0 auto;
@@ -90,7 +95,6 @@ body{
       padding: 0px 40px 120px 40px;
       Min-height: 100vh;
       Width: 100%
-      /* position: relative; */
       background-color: #000000;
       background-image: url("https://i.pinimg.com/originals/79/a3/84/79a384c3c449ad01b0e57e790807b2c0.gif");
       background-position: center;
@@ -99,17 +103,20 @@ body{
       Padding: 0 8%;
   }
 
-  /* .spline {
+   
+  /* #homepage {
+    position: relative;
+    padding: 0px 40px 120px 190px;
+    Min-height: 100vh;
+    Width: 100%
+}
+
+  .spline {
     position: absolute;
     padding-left: 10%;
-    margin: 0;
-    top: 0;
-    right: 0;
-    width: 1200px;
-    height: 1100px;
-    z-index: -0;
-  } */
-  
+    z-index: -1;
+  }
+   */
   .greetings{
     padding-top: 100px;
     padding-bottom: 10px;
@@ -284,8 +291,16 @@ body{
     float: right;
     margin-left: 0px;
     margin-top: 60px;
-  
   }
+
+  #contact {
+    margin-top: 30px;
+  }
+
+  .contact {
+    padding-bottom: 75px;
+  }
+
   .contact-p{
     color:#E1E8EB;
     display: block;
@@ -303,7 +318,7 @@ body{
   } */
   #contact{
     background-color: #000000;
-    padding-top: 40px;
+    padding-top: 70px;
   }
   .send-button{
     margin-top: 1.5rem;
@@ -445,5 +460,3 @@ body{
       height: 100vh;
       position: relative;
   }
-  
-  

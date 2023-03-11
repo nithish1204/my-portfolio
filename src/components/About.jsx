@@ -4,11 +4,10 @@ import coding from "../images/coding.gif";
 import deadpoolart from "../images/deadpoolart.gif";
 import about from "../images/about.png";
 
-
 function About() {
     return (
         <section id="about">
-        <div className="page-title">
+        <div className="page-title" data-aos="fade-left">
           <h2>
             <span>
               <img src={about} alt="" />
@@ -18,7 +17,7 @@ function About() {
         </div>
 
         {/* <!-- <div class="row"> --> */}
-        <div className="col-lg-12">
+        <div className="col-lg-12" data-aos="fade-right">
           <p className="section-description">
             I'm a self-taught<span className="name-about"> Frontend developer</span> from Chennai. I have completed
             my Python Pro BootCamp and Web Development Bootcamp course by <span className="angela">Dr. Angela Yu</span>, covering
@@ -29,7 +28,7 @@ function About() {
           </p>
         </div>
 
-        <div className="row container bio">
+        <div className="row container bio" data-aos="fade-up">
           <div className="photo-div col-lg-6">
             <img
               src={profile}
